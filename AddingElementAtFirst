@@ -1,0 +1,39 @@
+package SLL;
+class AddingElementsAtFirst {
+	public static void main(String[] args) {
+		SinglyLinkedList1 sl=new SinglyLinkedList1();
+		sl.addFirst(90);
+		sl.addFirst(80);
+		sl.addFirst(70);
+		sl.addFirst(60);
+
+		System.out.println(sl);
+	}
+}
+class SinglyLinkedList1{
+	class Node{
+		Object data;
+		Node next;
+		Node(Object data){
+			this.data=data;
+		}
+	}
+	Node head;
+	void addFirst(Object data) {
+		Node n=new Node(data);
+		n.next=head;
+		head=n;
+	}
+	public String toString() {
+		String str="";
+		Node t=head;
+		while(t!=null) 
+		{
+			str=str+t.data;
+			if(t.next!=null)
+				str=str+"->";
+			t=t.next;
+		}
+		return str;
+	}
+}
